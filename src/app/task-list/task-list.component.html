@@ -1,0 +1,12 @@
+<div class="task" *ngFor="let task of tasks; let i = index">
+  <h3>{{ task.title }}</h3>
+  <p>{{ task.description }}</p>
+  <button (click)="toggleUpdateForm(i)">Update</button>
+  <app-update-task-form *ngIf="showUpdateForm && currentIndex === i" [index]="i" [currentTask]="task"></app-update-task-form>
+  <button (click)="deleteTask(i)" style="background-color: red;">Delete</button>
+</div>
+
+
+
+
+
